@@ -1,4 +1,6 @@
 import Profile from "./components/Profile"
+import Movie from "./components/Movie"
+
 export default function Gallery(){
   return(
     <section>
@@ -7,6 +9,7 @@ export default function Gallery(){
         </h1>
         <Profile />
         <Profile />
+        <Movie />
 
     </section>
   )
