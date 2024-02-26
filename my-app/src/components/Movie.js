@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Avatar from './Avatar'
 const Movie = () => {
   return (
     <>
@@ -14,6 +14,10 @@ const Movie = () => {
       <li>Rehearse a movie scene</li>
       <li>Improve the spectrum technology</li>
     </ul>
+    <p>
+        <Avatar />
+    </p>
+    
   </>
   )
 }
