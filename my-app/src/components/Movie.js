@@ -1,5 +1,27 @@
 import React from 'react'
 import Avatar from './Avatar'
+
+
+function Card({ children }){
+    return(
+        <div className='card'
+            style={{
+                width:400,
+                height:400,
+                border: '1px solid rgba(0, 0, 0, 0.2)', 
+                borderRadius:'10px',
+                display:'flex',
+                justifyContent:'center',
+                alignItems:'center',
+                height:'60vh'
+
+                }}
+        >
+            {children}
+        </div>
+    )
+}
+
 const Movie = () => {
     const theme = {
         theme : {
@@ -23,10 +45,16 @@ const Movie = () => {
     </div>
    
     <div>
-        <Avatar
-            person = {{name:'Avatrar poster', imageId:'MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_'}}
-            size={{width:200, height:300}}
-         />
+        <Card>
+            <Avatar
+                    person = {{name:'Avatrar poster', imageId:'MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_'}}
+                    size={{width:200, height:300}}
+                />
+        </Card>
+        <Card>
+            <h1>Hello Card</h1>
+        </Card>
+       
     </div>
 
   </>

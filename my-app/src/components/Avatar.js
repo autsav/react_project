@@ -27,7 +27,7 @@ function dateSuffix(date){
         }            
 }
 
-function Avatar( {person, size}) {
+function Avatar({person, size = 100 }) {
     const source = "https://m.media-amazon.com/images/M/"
     const description = "Avatar image"
   return (
