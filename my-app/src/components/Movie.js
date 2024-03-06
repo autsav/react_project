@@ -23,9 +23,12 @@ const Movie = () => {
     </div>
    
     <div>
-        <Avatar />
+        <Avatar
+            person = {{name:'Avatrar poster', imageId:'MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_'}}
+            size={{width:200, height:300}}
+         />
     </div>
-    
+
   </>
   )
 }

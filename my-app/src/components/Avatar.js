@@ -27,17 +27,18 @@ function dateSuffix(date){
         }            
 }
 
-function Avatar() {
-    const source = "https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg"
+function Avatar( {person, size}) {
+    const source = "https://m.media-amazon.com/images/M/"
     const description = "Avatar image"
   return (
     <div>
         <h1>AVATAR</h1>
         <img
             className='avatar'
-            src={ source }
-            alt={ description }
-            style={{ width: '200px', height: '300px' }}
+            src={ source + person.imageId + '.jpg' }
+            alt={ person.name }
+            width={size.width}
+            height={size.height}
 
         />
         <br />
