@@ -8,7 +8,6 @@ export default function Gallery(){
           Amazing Scientist          
         </h1>
         <Profile />
-        <Profile />
         <Movie />
 
     </section>
