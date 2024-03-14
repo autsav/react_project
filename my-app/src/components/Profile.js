@@ -12,7 +12,6 @@ function Card({ children }){
               display:'flex',
               justifyContent:'center',
               alignItems:'center',
-              height:'60vh',
               backgroundColor:'#35626e'
               
 
@@ -57,7 +56,7 @@ function ProfileCard({name,imageUrl, profession, awards,discovered}) {
 export default function Profile() {
   return (
     <>
-      <h1>Hello</h1>
+    <h1>Module 2 Passing Props with components</h1>
       <Card>
       <ProfileCard
         name = "Maria Sklduska-Curie" 
