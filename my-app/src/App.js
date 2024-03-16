@@ -4,6 +4,8 @@ import Movie from "./components/Movie"
 import { BrowserRouter as Router, Routes, Route, Switch, Navigate } from 'react-router-dom'
 import Contact from "./components/Contact";
 import  ConditionalRendering  from './components/ConditionalRendering'
+import PackingList from "./components/PackingList";
+import DrinkList from "./components/DrinkList";
 
 export default function App(){
   return(
@@ -14,9 +16,8 @@ export default function App(){
           <Route path='/movie' element={<Movie />} exact />
           <Route path='/profile' element={<Profile />} exact />
           <Route path='/conditionalRendering' element={<ConditionalRendering />}  />
-
-
-      
+          <Route path='/packingList' element={<PackingList />}  />
+          <Route path='/drinkList' element={<DrinkList />}  />
           </Routes>        
     </Router>
   
