@@ -14,6 +14,11 @@ function Home() {
     <br></br>
 
     <Link to="/contact">Contact</Link>
+    <br></br>
+    <Link to="/packingList">PackingList</Link>
+    <br></br>
+    <Link to="/drinkList">DrinkList</Link>
+
 
   </div>
   )

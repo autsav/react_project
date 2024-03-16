@@ -3,11 +3,16 @@ import React from 'react'
 function Item({ name, isPacked }) {
     return <li className="item" >
     
-    {isPacked ? name + ' ✔' : name }
+    {isPacked ?
+     (
+        <del>
+        {name + ' ✔'}
+        </del>
+        ) 
+     : name + ' ❌'}
     
     </li>;
 }
-
 function PackingList(){
     return (
         <section>
