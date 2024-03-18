@@ -18,6 +18,8 @@ function Home() {
     <Link to="/packingList">PackingList</Link>
     <br></br>
     <Link to="/drinkList">DrinkList</Link>
+    <br></br>
+    <Link to="/renderingList">Rendering List</Link>
 
 
   </div>

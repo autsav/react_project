@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 import  ConditionalRendering  from './components/ConditionalRendering'
 import PackingList from "./components/PackingList";
 import DrinkList from "./components/DrinkList";
+import RenderingList from "./components/RenderingList";
 
 export default function App(){
   return(
@@ -18,6 +19,7 @@ export default function App(){
           <Route path='/conditionalRendering' element={<ConditionalRendering />}  />
           <Route path='/packingList' element={<PackingList />}  />
           <Route path='/drinkList' element={<DrinkList />}  />
+          <Route path='/renderingList' element={<RenderingList />}  />
           </Routes>        
     </Router>
   
