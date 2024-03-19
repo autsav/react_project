@@ -1,5 +1,6 @@
 import React from 'react'
 import { getImageUrl } from '../utils/utils';
+import { recipes } from '../constants/recipes';
 
 export const people = [{
   id: 0,
@@ -87,6 +88,43 @@ function List() {
     <ul>{listItems}</ul>
   );
 }
+// Make a list of recipes from this array! For each recipe in the array, display its name as an <h2>
+//  and list its ingredients in a <ul>.
+
+function Recipe({id, name, ingredients}){
+  return(
+    <div >            
+    <h2>{name}</h2>
+
+    <ul>
+      {ingredients.map(ingredient => {
+        return(
+          <li key={ingredient} >
+          {ingredient}
+        </li>
+        )
+         
+     })} 
+    </ul>
+    </div>
+
+  )
+}
+
+function RecipeList(){
+    const recipeLists = recipes.map(recipe => {
+      return(
+        <Recipe {...recipe} key={recipe.id} />
+      )
+    })
+  return(
+    <div>
+      <h1>Recipes</h1>
+      <ul>{recipeLists}</ul>
+
+    </div>
+  )
+}
 
 function RenderingList() {
 
@@ -98,9 +136,12 @@ function RenderingList() {
         <List />  
         <h1>Rendering all the data</h1>
         <ListingAll />
+        <h1>Rendering RecipeList</h1>
+        <RecipeList />
     </>
    
   )
 }
+
 
 export default RenderingList
