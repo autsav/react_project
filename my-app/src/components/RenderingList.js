@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { getImageUrl } from '../utils/utils';
+import { recipes } from '../constants/recipes';
 
 export const people = [{
   id: 0,
@@ -87,6 +88,64 @@ function List() {
     <ul>{listItems}</ul>
   );
 }
+// Make a list of recipes from this array! For each recipe in the array, display its name as an <h2>
+//  and list its ingredients in a <ul>.
+
+function Recipe({id, name, ingredients}){
+  return(
+    <div >            
+    <h2>{name}</h2>
+
+    <ul>
+      {ingredients.map(ingredient => {
+        return(
+          <li key={ingredient} >
+          {ingredient}
+        </li>
+        )
+         
+     })} 
+    </ul>
+    </div>
+
+  )
+}
+
+function RecipeList(){
+    const recipeLists = recipes.map(recipe => {
+      return(
+        <Recipe {...recipe} key={recipe.id} />
+      )
+    })
+  return(
+    <div>
+      <h1>Recipes</h1>
+      <ul>{recipeLists}</ul>
+
+    </div>
+  )
+}
+
+const poem = {
+  lines: [
+    'I write, erase, rewrite',
+    'Erase again, and then',
+    'A poppy blooms.'
+  ]
+};
+
+function Poem() {
+  return(
+    <article>
+      {poem.lines.map((line, i) =>
+        <Fragment key={i}>
+          {i > 0 && <hr />}
+          <p>{line}</p>
+        </Fragment>
+      )}
+    </article>
+  )
+}
 
 function RenderingList() {
 
@@ -98,9 +157,15 @@ function RenderingList() {
         <List />  
         <h1>Rendering all the data</h1>
         <ListingAll />
+        <h1>Rendering RecipeList</h1>
+        <RecipeList />
+        <h1>Poem with hr </h1>
+        <Poem />
+
     </>
    
   )
 }
+
 
 export default RenderingList
