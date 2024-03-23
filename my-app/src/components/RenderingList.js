@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { getImageUrl } from '../utils/utils';
 import { recipes } from '../constants/recipes';
 
@@ -126,6 +126,27 @@ function RecipeList(){
   )
 }
 
+const poem = {
+  lines: [
+    'I write, erase, rewrite',
+    'Erase again, and then',
+    'A poppy blooms.'
+  ]
+};
+
+function Poem() {
+  return(
+    <article>
+      {poem.lines.map((line, i) =>
+        <Fragment key={i}>
+          {i > 0 && <hr />}
+          <p>{line}</p>
+        </Fragment>
+      )}
+    </article>
+  )
+}
+
 function RenderingList() {
 
   return (
@@ -138,6 +159,9 @@ function RenderingList() {
         <ListingAll />
         <h1>Rendering RecipeList</h1>
         <RecipeList />
+        <h1>Poem with hr </h1>
+        <Poem />
+
     </>
    
   )
