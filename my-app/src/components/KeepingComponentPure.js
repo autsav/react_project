@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/clock.css'
+import Panel from './Panel';
+
+import { getImageUrl } from '../utils/utils';
 
 
 function Clock({ time }) {
-   
-
   let hours = time.getHours();
   let className;
 
@@ -19,6 +20,32 @@ function Clock({ time }) {
       {time.toLocaleTimeString()}
     </h1>
   );
+}
+
+function Profile({person}){
+    return (
+        <Panel person={person} >
+            <Header person={person}  />
+            <Avatar person={person}  />
+        </Panel>
+    )
+}
+
+function Header({person}){
+    return(
+        <h1>{person.name}</h1>
+    )
+}
+function Avatar({person}){
+    return(
+        <img
+            className='avatar'
+            src={getImageUrl(person)}
+            alt={person.name}
+            width={50}
+            height={50} 
+        />
+    );
 }
 
 function KeepingComponentPure() {
@@ -39,6 +66,15 @@ function KeepingComponentPure() {
     <div>
       <h1>KeepingComponentPure</h1>
       <Clock time={currentTime} />
+        <Profile person={{
+            imageId: 'lrWQx8l',
+            name: 'Subrahmanyan Chandrasekhar',
+        }} />
+
+        <Profile person={{
+            imageId: 'MK3eW3A',
+            name: 'Creola Katherine Johnson',
+        }} />
     </div>
   );
 }
