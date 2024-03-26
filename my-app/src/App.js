@@ -7,6 +7,7 @@ import  ConditionalRendering  from './components/ConditionalRendering'
 import PackingList from "./components/PackingList";
 import DrinkList from "./components/DrinkList";
 import RenderingList from "./components/RenderingList";
+import KeepingComponentPure from "./components/KeepingComponentPure";
 
 export default function App(){
   return(
@@ -20,6 +21,8 @@ export default function App(){
           <Route path='/packingList' element={<PackingList />}  />
           <Route path='/drinkList' element={<DrinkList />}  />
           <Route path='/renderingList' element={<RenderingList />}  />
+          <Route path='/keepingComponentPure' element={<KeepingComponentPure />}  />
+
           </Routes>        
     </Router>
   

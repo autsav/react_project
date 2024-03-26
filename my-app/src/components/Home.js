@@ -20,7 +20,8 @@ function Home() {
     <Link to="/drinkList">DrinkList</Link>
     <br></br>
     <Link to="/renderingList">Rendering List</Link>
-
+    <br></br>
+    <Link to="/keepingComponentClear">Keeping Component Pure </Link>
 
   </div>
   )
