@@ -22,7 +22,8 @@ function Home() {
     <Link to="/renderingList">Rendering List</Link>
     <br></br>
     <Link to="/keepingComponentClear">Keeping Component Pure </Link>
-
+    <br></br>
+    <Link to="/addingInteractivity">Adding Interactivity </Link>
   </div>
   )
 }

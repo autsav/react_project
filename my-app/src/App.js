@@ -8,6 +8,7 @@ import PackingList from "./components/PackingList";
 import DrinkList from "./components/DrinkList";
 import RenderingList from "./components/RenderingList";
 import KeepingComponentPure from "./components/KeepingComponentPure";
+import AddingInteractivity from "./components/AddingInteractivity";
 
 export default function App(){
   return(
@@ -22,6 +23,8 @@ export default function App(){
           <Route path='/drinkList' element={<DrinkList />}  />
           <Route path='/renderingList' element={<RenderingList />}  />
           <Route path='/keepingComponentPure' element={<KeepingComponentPure />}  />
+          <Route path='/addingInteractivity' element={<AddingInteractivity />}  />
+
 
           </Routes>        
     </Router>
