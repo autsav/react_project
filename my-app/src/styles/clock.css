@@ -1,0 +1,20 @@
+.day {
+    background: #fff;
+    color: #222;
+  }
+  .night {
+    background: #222;
+    color: #fff;
+  }
+  
+li {
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    float: left;
+    margin: 5px;
+    margin-bottom: 20px;
+    padding: 5px;
+    width: 70px;
+    height: 100px;
+  }
+  
