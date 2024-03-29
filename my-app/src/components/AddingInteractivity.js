@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 
 function AddingInteractivity (){
     return (
@@ -83,6 +85,9 @@ function Toolbar({onOpeningImage,onSendingFile}){
                  <br></br>
                      <p>Preventing Browser Default Behaviour</p>
                  <SignUp />
+                 <br></br>
+                 <Link to="/gallery">Gallery </Link>
+
         </div>
       
     )
