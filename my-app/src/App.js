@@ -9,6 +9,7 @@ import DrinkList from "./components/DrinkList";
 import RenderingList from "./components/RenderingList";
 import KeepingComponentPure from "./components/KeepingComponentPure";
 import AddingInteractivity from "./components/AddingInteractivity";
+import Gallery from "./components/Gallery";
 
 export default function App(){
   return(
@@ -24,6 +25,9 @@ export default function App(){
           <Route path='/renderingList' element={<RenderingList />}  />
           <Route path='/keepingComponentPure' element={<KeepingComponentPure />}  />
           <Route path='/addingInteractivity' element={<AddingInteractivity />}  />
+          <Route path='/gallery' element={<Gallery />}  />
+
+          
 
 
           </Routes>        
