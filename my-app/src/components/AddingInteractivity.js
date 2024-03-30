@@ -87,6 +87,8 @@ function Toolbar({onOpeningImage,onSendingFile}){
                  <SignUp />
                  <br></br>
                  <Link to="/gallery">Gallery </Link>
+                 <br></br>
+                 <Link to="/Form">Form</Link>
 
         </div>
       

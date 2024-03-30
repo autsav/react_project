@@ -10,6 +10,7 @@ import RenderingList from "./components/RenderingList";
 import KeepingComponentPure from "./components/KeepingComponentPure";
 import AddingInteractivity from "./components/AddingInteractivity";
 import Gallery from "./components/Gallery";
+import Form from "./components/Form";
 
 export default function App(){
   return(
@@ -26,6 +27,7 @@ export default function App(){
           <Route path='/keepingComponentPure' element={<KeepingComponentPure />}  />
           <Route path='/addingInteractivity' element={<AddingInteractivity />}  />
           <Route path='/gallery' element={<Gallery />}  />
+          <Route path='/form' element={<Form />}  />
 
           
 
