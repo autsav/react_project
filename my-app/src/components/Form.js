@@ -2,18 +2,36 @@ import React from 'react'
 import { useState } from 'react'
 
 function Counter (){
-    const [number, setNumber] = useState(0)
+    const [number, setNumber] = useState(0);
+    const [score, setScore] = useState(0);
+
+    function increment(){
+        setScore(s => s +1)
+    }
     return(
         <>
-            <h1>{number}</h1>
-            <button
-            onClick={e => {
-                setNumber(number + 2)
-                setTimeout(() => {
-                    alert(number)
-                },2000)
-            }}
-            > +2 </button>
+            <h1>Counter</h1>
+            <h2>Counter:{number}</h2>
+                <button
+                onClick={e => {
+                    setNumber(number + 2)
+                
+                }}
+                > +2 </button>
+            <h1>Score Board</h1>
+            <h2>Score:{score}</h2>
+                <button 
+                    onClick={()=>{
+                        increment();
+                    }}
+                >+1</button>
+                <button
+                    onClick={()=>{
+                        increment();
+                        increment();
+                        increment();    
+                    }}
+                >+3</button>
         </>
     )
 }
@@ -46,6 +64,40 @@ function TrafficLight() {
       </>
     );
   }
+
+  //--------------------Request Tracker ----------------------
+
+  function RequestTracker(){
+
+    const [pending, setPending] = useState(0);
+    const [completed, setCompleted] = useState(0);
+
+    async function handleClick() {
+        setPending(p => p + 1);
+        await delay(3000);
+        setPending(p => p - 1);
+        setCompleted(c => c + 1);
+      }
+   
+    return(
+        <>
+            <h3>
+                Pending: {pending}
+            </h3>
+            <h3>
+                Completed: {completed}
+            </h3>
+            <button onClick={handleClick}>
+                Buy
+            </button>
+        </>
+    );
+  }
+  function delay(ms){
+    return new Promise(resolve => {
+        setTimeout(resolve , ms);
+    });
+}
 
 function Form() {
     const [to, setTo] = useState('Gwan')
@@ -90,6 +142,9 @@ function Form() {
         <h2>----------------------------------------------------------------------</h2>
         <h2>TrafficLight</h2>
         <TrafficLight />
+        <h2>----------------------------------------------------------------------</h2>
+        <h2>Request Tracker</h2>
+        <RequestTracker />
     </>
    
    )
