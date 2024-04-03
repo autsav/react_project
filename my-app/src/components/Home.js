@@ -24,6 +24,8 @@ function Home() {
     <Link to="/keepingComponentClear">Keeping Component Pure </Link>
     <br></br>
     <Link to="/addingInteractivity">Adding Interactivity </Link>
+    <br></br>
+    <Link to="/updateObjectInState">Update Object In State </Link>
     
   </div>
   )
