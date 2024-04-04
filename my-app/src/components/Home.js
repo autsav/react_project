@@ -26,9 +26,12 @@ function Home() {
     <Link to="/addingInteractivity">Adding Interactivity </Link>
     <br></br>
     <Link to="/updateObjectInState">Update Object In State </Link>
+    <br></br>
+    <Link to="/updateArrayInState">Update Array In State </Link>
     
   </div>
   )
 }
 
 export default Home
+
