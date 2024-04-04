@@ -12,6 +12,7 @@ import AddingInteractivity from "./components/AddingInteractivity";
 import Gallery from "./components/Gallery";
 import Form from "./components/Form";
 import UpdatingObjectInState from "./components/UpdatingObjectInState";
+import UpdatingArrayInState from "./components/UpdatingArrayInState";
 
 export default function App(){
   return(
@@ -30,6 +31,7 @@ export default function App(){
           <Route path='/gallery' element={<Gallery />}  />
           <Route path='/form' element={<Form />}  />
           <Route path='/updateObjectInState' element={<UpdatingObjectInState />}  />
+          <Route path='/updateArrayInState' element={<UpdatingArrayInState />}  />
 
 
           
