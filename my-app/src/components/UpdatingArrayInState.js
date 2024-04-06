@@ -179,17 +179,115 @@ function ShapeEditor() {
 }
 
 
+//---------------------------CounterList ----------------------------
+let initialCounters = [
+    0, 0, 0
+  ];
+  
+ function CounterList() {
+    const [counters, setCounters] = useState(
+      initialCounters
+    );
+  
+    function handleIncrementClick(index) {
+      const nextCounters = counters.map((c, i) => {
+        if (i === index) {
+          // Increment the clicked counter
+          return c + 1;
+        } else {
+          // The rest haven't changed
+          return c;
+        }
+      });
+      setCounters(nextCounters);
+    }
+  
+    return (
+      <ul>
+        {counters.map((counter, i) => (
+          <li key={i}>
+            {counter}
+            <button onClick={() => {
+              handleIncrementClick(i);
+            }}>+1</button>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  //-------List 3 -----------------------------------
+
+
+let nextId3 = 3;
+const initialArtists3 = [
+  { id: 0, name: 'Marta Colvin Andrade' },
+  { id: 1, name: 'Lamidi Olonade Fakeye'},
+  { id: 2, name: 'Louise Nevelson'},
+];
+
+function List3() {
+  const [name, setName] = useState('');
+  const [artists, setArtists] = useState(
+    initialArtists3
+  );
+
+  function handleClick() {
+    const insertAt = 1; // Could be any index
+    const nextArtists3 = [
+      // Items before the insertion point:
+      ...artists.slice(0, insertAt),
+      // New item:
+      { id: nextId3++, name: name },
+      // Items after the insertion point:
+      ...artists.slice(insertAt)
+    ];
+    setArtists(nextArtists3);
+    setName('');
+  }
+
+  return (
+    <>
+      <h1>Inspiring sculptors:</h1>
+      <input
+        value={name}
+        onChange={e => setName(e.target.value)}
+      />
+      <button onClick={handleClick}>
+        Insert
+      </button>
+      <ul>
+        {artists.map(artist => (
+          <li key={artist.id}>{artist.name}</li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+
+  
+
 function UpdatingArrayInState() {
   return (
     <div>UpdatingArrayInState
     <h2>BucketList</h2>
     <BucketList />
+    <br></br>
     <h2>List</h2>
     <List  />
+    <br></br>
     <h2>List 2</h2>
     <List1 />
-    <h2>Trasnforming an array </h2>
+    <br></br>
+    <h2>Transforming an array </h2>
     <ShapeEditor />
+    <br></br>
+    <h2>Counter List </h2>
+    <CounterList />
+    <br></br>
+    <h2> List3 </h2>
+    <List3 />
     </div>
 
   )
