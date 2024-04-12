@@ -31,4 +31,4 @@ function CounterApp() {
     </div>
   );
 }
-export default CounterApp();
+export default CounterApp
