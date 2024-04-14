@@ -13,6 +13,7 @@ import Gallery from "./components/Gallery";
 import Form from "./components/Form";
 import UpdatingObjectInState from "./components/UpdatingObjectInState";
 import UpdatingArrayInState from "./components/UpdatingArrayInState";
+import Calculator from "./components/Calculator";
 
 export default function App(){
   return(
@@ -32,6 +33,8 @@ export default function App(){
           <Route path='/form' element={<Form />}  />
           <Route path='/updateObjectInState' element={<UpdatingObjectInState />}  />
           <Route path='/updateArrayInState' element={<UpdatingArrayInState />}  />
+          <Route path='/calculator' element={<Calculator />}  />
+
 
 
           
