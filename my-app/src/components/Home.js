@@ -28,6 +28,8 @@ function Home() {
     <Link to="/updateObjectInState">Update Object In State </Link>
     <br></br>
     <Link to="/updateArrayInState">Update Array In State </Link>
+    <br></br>
+    <Link to="/calculator">Calculator Project </Link>
     
   </div>
   )
