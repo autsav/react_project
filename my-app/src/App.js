@@ -15,6 +15,7 @@ import UpdatingObjectInState from "./components/UpdatingObjectInState";
 import UpdatingArrayInState from "./components/UpdatingArrayInState";
 import Calculator from "./components/Calculator";
 import QuoteGenerator from "./components/QuoteGenerator";
+import WhetherApp from "./components/WhetherApp";
 
 export default function App(){
   return(
@@ -36,6 +37,8 @@ export default function App(){
           <Route path='/updateArrayInState' element={<UpdatingArrayInState />}  />
           <Route path='/calculator' element={<Calculator />}  />
           <Route path='/quoteGenerator' element={<QuoteGenerator />}  />
+          <Route path='/Whether' element={<WhetherApp />}  />
+
 
 
 
