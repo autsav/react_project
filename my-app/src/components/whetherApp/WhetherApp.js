@@ -1,6 +1,7 @@
 // App.js
 import React, { useState, useEffect } from 'react';
-import '../styles/whether.css';
+import '../../styles/whether.css';
+import Header from './Header';
 
 const WhetherApp = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -27,6 +28,7 @@ const WhetherApp = () => {
 
   return (
     <div className="App">
+      <Header />
       {/* Header */}
       {/* Search Bar */}
       {/* Weather Card */}
