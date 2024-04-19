@@ -4,7 +4,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: calc(100% - 40px); /* Adjusted width to accommodate left and right margins */
     height: 60px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -15,6 +15,16 @@
     z-index: 1000;
   }
   
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .right {
+    display: flex;
+    align-items: center;
+  }
+  
   .title {
     font-size: 24px;
     color: #333;
@@ -23,10 +33,17 @@
   .time {
     font-size: 16px;
     color: #666;
+    margin-right: 10px;
+  }
+  
+  .location {
+    font-size: 16px;
+    color: #666;
   }
   
   .breadcrumb {
     font-size: 16px;
     color: #666;
+    margin-right: 20px;
   }
   
