@@ -53,7 +53,7 @@ const Header = () => {
       </div>
       <div className="title">Weather App</div>
       <div className="right">
-        <div className="breadcrumb">Home / Weather</div>
+        <div className="breadcrumb">Home</div>
       </div>
     </header>
   );

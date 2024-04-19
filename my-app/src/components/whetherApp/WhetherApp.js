@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/whether.css';
 import Header from './Header';
+import SearchBar from './SearchBar';
 
 const WhetherApp = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -29,6 +30,7 @@ const WhetherApp = () => {
   return (
     <div className="App">
       <Header />
+      <SearchBar />
       {/* Header */}
       {/* Search Bar */}
       {/* Weather Card */}
