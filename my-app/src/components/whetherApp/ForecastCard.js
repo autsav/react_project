@@ -1,14 +1,31 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-const ForecastCard = ({ date, temperature, weatherIcon, description }) => {
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
+
+const ForecastCard = ({ date, temperature, weatherIcon, description, onClick, humidity, windSpeed, precipitationChance }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
-    <Card>
+    <Card onClick={onClick}>
       <Date>{date}</Date>
       <Temperature>{temperature}°C</Temperature>
       <WeatherIcon src={weatherIcon} alt={description} />
       <Description>{description}</Description>
+      {isExpanded && (
+        <Details>
+          <DetailItem>Humidity: {humidity}%</DetailItem>
+          <DetailItem>Wind Speed: {windSpeed} m/s</DetailItem>
+          <DetailItem>Precipitation Chance: {precipitationChance}%</DetailItem>
+        </Details>
+      )}
+      <ExpandButton onClick={toggleExpand}>
+        {isExpanded ? 'Hide Details' : 'Show Details'}
+      </ExpandButton>
     </Card>
   );
 };
@@ -20,6 +37,7 @@ const Card = styled.div`
   padding: 20px;
   text-align: center;
   max-width: 200px;
+  cursor: pointer;
 `;
 
 const Date = styled.h3`
@@ -45,11 +63,40 @@ const Description = styled.p`
   margin: 0;
 `;
 
+const Details = styled.div`
+  margin-top: 10px;
+`;
+
+const DetailItem = styled.p`
+  font-size: 12px;
+  color: #999999;
+  margin: 5px 0;
+`;
+
+const ExpandButton = styled.button`
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  color: #333333;
+  font-size: 12px;
+  padding: 8px 12px;
+  margin-top: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+`;
+
 ForecastCard.propTypes = {
   date: PropTypes.string.isRequired,
   temperature: PropTypes.number.isRequired,
   weatherIcon: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  humidity: PropTypes.number.isRequired,
+  windSpeed: PropTypes.number.isRequired,
+  precipitationChance: PropTypes.number.isRequired,
+  onClick: PropTypes.func,
 };
 
 export default ForecastCard;
