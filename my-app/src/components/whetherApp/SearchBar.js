@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
 import '../../styles/whether/searchbar.css';
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch = () => {} }) => {
   const [query, setQuery] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (event) => {
     setQuery(event.target.value);
@@ -11,23 +11,30 @@ const SearchBar = ({ onSearch }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onSearch(query);
-    setQuery('');
+    if (query.trim() !== '') {
+      onSearch(query);
+      setQuery('');
+      setErrorMessage('');
+    } else {
+      setErrorMessage('Please enter a location.');
+    }
   };
 
   return (
-    <form className="search-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Enter location..."
-        value={query}
-        onChange={handleChange}
-        className="search-input"
-      />
-      <button type="submit" className="search-button">Search</button>
-    </form>
+    <div>
+      <form className="search-form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Enter location..."
+          value={query}
+          onChange={handleChange}
+          className="search-input"
+        />
+        <button type="submit" className="search-button">Search</button>
+      </form>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
+    </div>
   );
 };
 
 export default SearchBar;
-
