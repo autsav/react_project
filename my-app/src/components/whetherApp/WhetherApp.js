@@ -1,4 +1,3 @@
-// App.js
 import React, { useState, useEffect } from 'react';
 import '../../styles/whether.css';
 import Header from './Header';
@@ -7,11 +6,9 @@ import WhetherCard from './WhetherCard';
 import ForecastCard from './ForecastCard';
 import Globe from './Globe';
 import Footer from './Footer';
-// import Globe from './Globe';
 
 const WhetherApp = () => {
   const [weatherData, setWeatherData] = useState(null);
-  console.log(weatherData)
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -32,7 +29,6 @@ const WhetherApp = () => {
 
     fetchWeatherData();
   }, []);
-    
 
   return (
     <div className="App">
@@ -45,18 +41,7 @@ const WhetherApp = () => {
       ) : weatherData ? (
         <WhetherCard weatherData={weatherData} />
       ) : null}
-      {/* Weather Card */}
-      {/* <WhetherCard
-          location={weatherData.location}
-          temperature={weatherData.temperature}
-          description={weatherData.description}
-          icon={weatherData.icon}
-         /> */}
-         <ForecastCard />
-         {/* <Globe /> */}
-      {/* Forecast Cards */}
-      {/* Globe Component */}
-      {/* Footer */}
+      <ForecastCard />
       <Globe />
       <Footer />
     </div>
