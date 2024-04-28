@@ -4,7 +4,7 @@ import Header from './Header';
 import SearchBar from './SearchBar';
 import WhetherCard from './WhetherCard';
 import ForecastCard from './ForecastCard';
-import Globe from './Globe';
+// import Globe from './Globe';
 import Footer from './Footer';
 
 const WhetherApp = () => {
@@ -42,7 +42,7 @@ const WhetherApp = () => {
         <WhetherCard weatherData={weatherData} />
       ) : null}
       <ForecastCard />
-      <Globe />
+      {/* <Globe /> */}
       <Footer />
     </div>
   );
