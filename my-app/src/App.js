@@ -18,6 +18,7 @@ import QuoteGenerator from "./components/QuoteGenerator";
 import WhetherApp from "./components/whetherApp/WhetherApp";
 import NoteApp from "./components/Notes/NoteApp"
 import ExpenseTrackerApp from "./components/ExpenseTrackerApp";
+import TimeTracker from "./components/Timetracker";
 export default function App(){
   return(
     <Router>
@@ -41,6 +42,8 @@ export default function App(){
           <Route path='/Whether' element={<WhetherApp />}  />
           <Route path='/note' element={<NoteApp />}  />
           <Route path='/expensetracker' element={<ExpenseTrackerApp />}  />
+          <Route path='/timetracker' element={<TimeTracker />}  />
+
 
 
 
