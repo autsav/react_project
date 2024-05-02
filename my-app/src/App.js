@@ -19,6 +19,8 @@ import WhetherApp from "./components/whetherApp/WhetherApp";
 import NoteApp from "./components/Notes/NoteApp"
 import ExpenseTrackerApp from "./components/ExpenseTrackerApp";
 import TimeTracker from "./components/Timetracker";
+import Gallery2 from "./components/Gallery/Gallery2";
+
 export default function App(){
   return(
     <Router>
@@ -43,6 +45,8 @@ export default function App(){
           <Route path='/note' element={<NoteApp />}  />
           <Route path='/expensetracker' element={<ExpenseTrackerApp />}  />
           <Route path='/timetracker' element={<TimeTracker />}  />
+          <Route path='/gallery2' element={<Gallery2 />}  />
+
 
 
 
