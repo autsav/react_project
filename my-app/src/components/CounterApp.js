@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
-import './CounterApp.css';
+import '../styles/CounterApp.css'
+
 
 function CounterApp() {
   const [name, setName] = useState('');
