@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import './CounterApp.css';
 
 function CounterApp() {
   const [name, setName] = useState('');
@@ -12,13 +13,19 @@ function CounterApp() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name.trim() !== '') {
-      setCount(prevCount => prevCount + 1);
+      setCount((prevCount) => prevCount + 1);
       setName('');
+      // Trigger animation
+      const counter = document.getElementById('count');
+      counter.classList.add('animate');
+      setTimeout(() => {
+        counter.classList.remove('animate');
+      }, 300); // Animation duration should match CSS
     }
   };
 
   return (
-    <div>
+    <div className="counter-app">
       <h1>Complex Counter App</h1>
       <form onSubmit={handleSubmit}>
         <label>
@@ -27,8 +34,9 @@ function CounterApp() {
         </label>
         <button type="submit">Submit</button>
       </form>
-      <p>Count: {count}</p>
+      <p id="count" className="count">Count: {count}</p>
     </div>
   );
 }
-export default CounterApp
+
+export default CounterApp;
