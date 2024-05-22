@@ -1,51 +1,65 @@
-import React, { useState } from 'react'
-import '../styles/calculator.css'
+import React, { useState, useEffect } from 'react';
+import '../styles/calculator.css';
 
 function Calculator() {
     const [display, setDisplay] = useState('');
     const [result, setResult] = useState('');
 
-    const handleClick = (value) => {
-        if (value === '='){
-            try {
-            //We shold not use Eval function as it creates security risk to the system
-                setResult(eval(display));
-            } catch (error){
-                setResult('Error');
+    useEffect(() => {
+        const handleKeyPress = (event) => {
+            const { key } = event;
+            if (/[0-9+\-*/.]/.test(key)) {
+                handleClick(key);
+            } else if (key === 'Enter') {
+                handleClick('=');
+            } else if (key === 'Backspace') {
+                handleClick('C');
             }
-        }else if ( value === 'C') {
+        };
+
+        window.addEventListener('keydown', handleKeyPress);
+        return () => {
+            window.removeEventListener('keydown', handleKeyPress);
+        };
+    }, []);
+
+    const calculateResult = (expression) => {
+        try {
+            // Using Function constructor to safely evaluate the expression
+            const safeEval = (expr) => Function('"use strict"; return (' + expr + ')')();
+            return String(safeEval(expression));
+        } catch (error) {
+            return 'Error';
+        }
+    };
+
+    const handleClick = (value) => {
+        if (value === '=') {
+            const calculatedResult = calculateResult(display);
+            setResult(calculatedResult);
+        } else if (value === 'C') {
             setDisplay('');
             setResult('');
-        }else {
+        } else {
             setDisplay((prevDisplay) => prevDisplay + value);
         }
-    }
+    };
 
-
-  return (
-    <div className='calculator'>
-        <div className="display">{result || display}</div>
-        <div className='buttons'>
-            <button onClick={() => handleClick('7')}>7</button>
-            <button onClick={() => handleClick('8')}>8</button>
-            <button onClick={() => handleClick('9')}>9</button>
-            <button onClick={() => handleClick('+')}>+</button>
-            <button onClick={() => handleClick('4')}>4</button>
-            <button onClick={() => handleClick('5')}>5</button>
-            <button onClick={() => handleClick('6')}>6</button>
-            <button onClick={() => handleClick('-')}>-</button>
-            <button onClick={() => handleClick('1')}>1</button>
-            <button onClick={() => handleClick('2')}>2</button>
-            <button onClick={() => handleClick('3')}>3</button>
-            <button onClick={() => handleClick('*')}>*</button>
-            <button onClick={() => handleClick('0')}>0</button>
-            <button onClick={() => handleClick('.')}>.</button>
-            <button onClick={() => handleClick('=')}>=</button>
-            <button onClick={() => handleClick('C')}>C</button>
-            <button onClick={() => handleClick('/')}>&divide;</button>
+    return (
+        <div className='calculator'>
+            <div className="display">
+                <div className="current-input">{display}</div>
+                <div className="result">{result}</div>
+            </div>
+            <div className='buttons'>
+                {['7', '8', '9', '+', '4', '5', '6', '-', '1', '2', '3', '*', '0', '.', '=', 'C', '/'].map((btn) => (
+                    <button key={btn} onClick={() => handleClick(btn)}>
+                        {btn}
+                    </button>
+                ))}
+            </div>
         </div>
-    </div>
-  )
+    );
 }
 
-export default Calculator
+export default Calculator;
