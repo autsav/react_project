@@ -342,7 +342,9 @@ function ItemList2({ artworks, onToggle }) {
   );
 }
 //-------------------------End of Bucket list-------------------------
-  //-------start of shopping cart-------/
+//------------------start Removing the item from the shopping cart------------------
+
+
 const initialProducts = [{
   id: 0,
   name: 'Baklava',
